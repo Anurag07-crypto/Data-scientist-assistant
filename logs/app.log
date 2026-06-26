@@ -1,0 +1,376 @@
+2026-06-25 14:02:07 | ERROR    | server | Unexpected error in /insights: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 14908, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 100, in insights_service
+    response = structured_llm.invoke(PROMPT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3442, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6004, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 627, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.APIStatusError: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 14908, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-06-25 14:04:57 | ERROR    | server | Unexpected error in /insights: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Requested 15104, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 100, in insights_service
+    response = structured_llm.invoke(PROMPT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3442, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6004, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 627, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.APIStatusError: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Requested 15104, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-06-25 14:09:12 | ERROR    | server | Unexpected error in /insights: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Requested 15125, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 100, in insights_service
+    response = structured_llm.invoke(PROMPT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3442, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6004, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 627, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.APIStatusError: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Requested 15125, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-06-25 14:10:47 | ERROR    | server | Unexpected error in /insights: 'content'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 78, in insights_service
+    {recent_trends["content"]}
+     ~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'content'
+2026-06-25 14:18:34 | ERROR    | server | Unexpected error in /insights: 'content'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 78, in insights_service
+    1. Dataset overview
+KeyError: 'content'
+2026-06-25 14:22:15 | ERROR    | server | Unexpected error in /insights: 'content'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 35, in insights
+    response = insights_service(df, target_column, topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\llm_service.py", line 78, in insights_service
+    Provide:
+KeyError: 'content'
+2026-06-25 14:23:33 | INFO     | server | Insights generated from backend side
+2026-06-25 14:25:07 | ERROR    | server | Unexpected error in /uploads: Cannot specify both 'axis' and 'index'/'columns'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 30, in preprocess_and_eval
+    X_col = data_frame.drop(columns=[t_col], axis=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\frame.py", line 6300, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\generic.py", line 4631, in drop
+    raise ValueError("Cannot specify both 'axis' and 'index'/'columns'")
+ValueError: Cannot specify both 'axis' and 'index'/'columns'
+2026-06-25 14:25:09 | ERROR    | server | Unexpected error in /uploads: Cannot specify both 'axis' and 'index'/'columns'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 30, in preprocess_and_eval
+    X_col = data_frame.drop(columns=[t_col], axis=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\frame.py", line 6300, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\generic.py", line 4631, in drop
+    raise ValueError("Cannot specify both 'axis' and 'index'/'columns'")
+ValueError: Cannot specify both 'axis' and 'index'/'columns'
+2026-06-25 14:26:19 | ERROR    | server | Unexpected error in /uploads: Cannot specify both 'axis' and 'index'/'columns'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 30, in preprocess_and_eval
+    X_col = data_frame.drop(columns=[t_col])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\frame.py", line 6300, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\generic.py", line 4631, in drop
+    raise ValueError("Cannot specify both 'axis' and 'index'/'columns'")
+ValueError: Cannot specify both 'axis' and 'index'/'columns'
+2026-06-25 14:26:22 | ERROR    | server | Unexpected error in /uploads: Cannot specify both 'axis' and 'index'/'columns'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 30, in preprocess_and_eval
+    X_col = data_frame.drop(columns=[t_col])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\frame.py", line 6300, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\pandas\core\generic.py", line 4631, in drop
+    raise ValueError("Cannot specify both 'axis' and 'index'/'columns'")
+ValueError: Cannot specify both 'axis' and 'index'/'columns'
+2026-06-25 14:28:01 | INFO     | server | Insights generated from backend side
+2026-06-25 14:28:39 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-25 14:28:39 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-25 14:28:39 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-25 14:28:40 | INFO     | preprocess_and_train.preprocessing | Model trained
+2026-06-25 14:28:40 | INFO     | preprocess_and_train.preprocessing | Model Saved
+2026-06-25 14:28:40 | INFO     | preprocess_and_train.preprocessing | Regression Report Generated
+2026-06-25 14:28:40 | INFO     | server | Machine Learning Model Generated from Backend Side
+2026-06-26 12:56:00 | INFO     | server | Insights generated from backend side
+2026-06-26 12:56:16 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 12:56:16 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 12:56:16 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 12:56:16 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 12:56:52 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 12:56:52 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 12:56:52 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 12:56:52 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 12:56:54 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 12:56:54 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 12:56:54 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 12:56:54 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 13:03:12 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:03:12 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:03:12 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:03:12 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 13:04:46 | INFO     | server | Insights generated from backend side
+2026-06-26 13:05:00 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:05:00 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:05:00 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:05:00 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 13:09:28 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:09:28 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:09:28 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:09:28 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 13:10:34 | INFO     | server | Insights generated from backend side
+2026-06-26 13:10:53 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:10:53 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:10:53 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Model trained
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Model Saved
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Regression Report Generated
+2026-06-26 13:29:01 | INFO     | server | Machine Learning Model Generated from Backend Side
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:29:01 | ERROR    | server | Unexpected error in /uploads: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\Backend\server.py", line 101, in upload_files
+    report = preprocess_and_eval(df, t_col, data_type, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\Data_Scientist\preprocess_and_train\preprocessing.py", line 68, in preprocess_and_eval
+    trained_model = pipeline.fit(X_train, y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\pipeline.py", line 649, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 1393, in wrapper
+    estimator._validate_params()
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\base.py", line 554, in _validate_params
+    validate_parameter_constraints(
+  File "C:\Users\Lenovo\Desktop\Data_Scientist\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of RandomizedSearchCV must be an object implementing 'fit'. Got None instead.
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Data Splitted
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Preprocessing Done
+2026-06-26 13:29:01 | INFO     | preprocess_and_train.preprocessing | Regression Model Selected
+2026-06-26 13:41:42 | INFO     | preprocess_and_train.preprocessing | Model trained
+2026-06-26 13:41:42 | INFO     | preprocess_and_train.preprocessing | Model Saved
+2026-06-26 13:41:43 | INFO     | preprocess_and_train.preprocessing | Regression Report Generated
+2026-06-26 13:41:43 | INFO     | server | Machine Learning Model Generated from Backend Side
